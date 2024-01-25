@@ -1,5 +1,5 @@
 <?xml version='1.1' encoding='UTF-8'?>
-<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@770.v1a_d0708dd1f6">
+<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@773.vc4fe1378f1d5">
     <actions/>
     <description></description>
     <properties/>
@@ -11,7 +11,7 @@
         <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
     </icon>
     <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.858.v898218f3609d">
-        <pruneDeadBranches>true</pruneDeadBranches>
+        <pruneDeadBranches>false</pruneDeadBranches>
         <daysToKeep>-1</daysToKeep>
         <numToKeep>-1</numToKeep>
         <abortBuilds>false</abortBuilds>
@@ -19,7 +19,21 @@
     <triggers/>
     <disabled>false</disabled>
     <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.1144.v1425d1c3d5a_7">
-        <data/>
+        <data>
+            <jenkins.branch.BranchSource>
+                <source class="jenkins.plugins.git.GitSCMSource" plugin="git@5.2.1">
+                    <id>ebd35a33-5f88-4993-b2e3-1249b525cb7b</id>
+                    <remote>{{ item.repo_name }}</remote>
+                    <credentialsId></credentialsId>
+                    <traits>
+                        <jenkins.plugins.git.traits.BranchDiscoveryTrait/>
+                    </traits>
+                </source>
+                <strategy class="jenkins.branch.DefaultBranchPropertyStrategy">
+                    <properties class="empty-list"/>
+                </strategy>
+            </jenkins.branch.BranchSource>
+        </data>
         <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
     </sources>
     <factory class="org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory">
@@ -27,3 +41,4 @@
         <scriptPath>Jenkinsfile</scriptPath>
     </factory>
 </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject>
+
