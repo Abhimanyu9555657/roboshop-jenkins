@@ -22,7 +22,7 @@
         <data>
             <jenkins.branch.BranchSource>
                 <source class="jenkins.plugins.git.GitSCMSource" plugin="git@5.2.1">
-                    <id>ebd35a33-5f88-4993-b2e3-1249b525cb7b</id>
+                    <id>3df187a5-2817-4381-b250-bd7ed3a6662c</id>
                     <remote>{{ item.repo_name }}</remote>
                     <credentialsId></credentialsId>
                     <traits>
@@ -41,5 +41,4 @@
         <scriptPath>Jenkinsfile</scriptPath>
     </factory>
 </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject>
-
 
