@@ -10,7 +10,7 @@
       - { job_name: "cart", repo_name: "https://github.com/Abhimanyu9555657/cart", folder_name: "CI-Pipelines" }
     sjobs:
       - { job_name: "roboshop-terraform", repo_name: "https://github.com/Abhimanyu9555657/roboshop-terraform", folder_name: "Infra-Jobs" }
-      -
+
 
 
 
