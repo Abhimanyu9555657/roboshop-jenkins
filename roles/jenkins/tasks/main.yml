@@ -1,7 +1,7 @@
 - name: Create Folders
   ansible.builtin.include_tasks:
     file: folder.yml
-  loop: "{{ folders }}"
+  loop: "{{ folder }}"
 
 - name: Create Multibranch Pipeline Jobs
   ansible.builtin.include_tasks:
@@ -12,6 +12,7 @@
   ansible.builtin.include_tasks:
     file: sjob.yml
   loop: "{{ sjobs }}"
+
 
 
 
