@@ -10,7 +10,7 @@ def call() {
         }
         checkout scmGit(
                 branches: [[name: branch_name]],
-                userRemoteConfigs: [[url: "https://github.com/raghudevopsb74/${component}"]]
+                userRemoteConfigs: [[url: "https://github.com/Abhimanyu9555657/${component}"]]
         )
 
         if(env.TAG_NAME ==~ ".*") {
