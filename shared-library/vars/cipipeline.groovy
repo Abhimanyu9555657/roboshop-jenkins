@@ -17,7 +17,10 @@ def call() {
 
       stage('Code Quality') {
         when {
-          expression { BRANCH_NAME == ".*" }
+          allof {
+            expression { env.BRANCH_NAME != null}
+            expression { env.TAG_NAME == null }
+          }
         }
         steps {
           echo 'Hello World'
