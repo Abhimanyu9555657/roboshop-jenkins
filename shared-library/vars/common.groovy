@@ -4,7 +4,7 @@ def compile() {
     }
 
     if (env.codeType == "nodejs") {
-        print 'nodejs'
+        print 'Nodejs'
     }
 
     if (env.codeType == "python") {
