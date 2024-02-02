@@ -5,11 +5,18 @@ def call() {
     stages {
       stage('Compile Code') {
         steps {
-         sh 'env'
+          sh 'env'
         }
       }
 
       stage('Test') {
+        when {
+          allOf {
+            expression { env.BRANCH_NAME != null }
+            expression { env.TAG_NAME == null }
+          }
+
+        }
         steps {
           echo 'Hello World'
         }
@@ -17,10 +24,11 @@ def call() {
 
       stage('Code Quality') {
         when {
-          allof {
+          allOf {
             expression { env.BRANCH_NAME != null }
             expression { env.TAG_NAME == null }
           }
+
         }
         steps {
           echo 'Hello World'
@@ -32,20 +40,21 @@ def call() {
           expression { BRANCH_NAME == "main" }
         }
 
-         steps {
-           echo 'Hello World'
-         }
+        steps {
+          echo 'Hello World'
+        }
       }
 
       stage('Release') {
         when {
           expression { env.TAG_NAME ==~ ".*" }
         }
-          steps {
-            echo 'Hello World'
+        steps {
+          sh 'env'
+          echo 'Hello World'
         }
       }
+
     }
   }
 }
-
