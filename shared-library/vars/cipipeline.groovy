@@ -16,6 +16,9 @@ def call() {
       }
 
       stage('Code Quality') {
+        when {
+          expression { BRANCH_NAME == ".*" }
+        }
         steps {
           echo 'Hello World'
         }
