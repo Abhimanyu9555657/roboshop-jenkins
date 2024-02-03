@@ -28,7 +28,7 @@ def codeQuality() {
     }
 }
 
-def codeSecutity() {
+def codeSecurity() {
     stage('Code Security') {
         print 'Code Security'
     }
@@ -39,5 +39,7 @@ def release() {
         print 'Release'
     }
 }
+
+
 
 
