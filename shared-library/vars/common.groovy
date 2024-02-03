@@ -18,19 +18,17 @@ def compile() {
 
 def test() {
     stage('Test Cases') {
-        print 'Test'
-    }
-}
+        if (env.codeType == "maven") {
+            sh '/home/centos/maven/bin/mvn test'
+        }
 
-def codeQuality() {
-    stage('Code Quality') {
-        print 'Code Quality'
-    }
-}
+        if (env.codeType == "nodejs") {
+            sh 'npm test'
+        }
 
-def codeSecurity() {
-    stage('Code Security') {
-        print 'Code Security'
+        if (env.codeType == "python") {
+            sh 'python3.6 -m unittest'
+        }
     }
 }
 
